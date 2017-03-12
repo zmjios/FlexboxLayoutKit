@@ -9,11 +9,21 @@
 /* Begin PBXBuildFile section */
 		83B0A8B11E6F09C00049587A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B0A8B01E6F09C00049587A /* AppDelegate.swift */; };
 		83B0A8B31E6F09C00049587A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B0A8B21E6F09C00049587A /* ViewController.swift */; };
-		83B0A8B61E6F09C00049587A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83B0A8B41E6F09C00049587A /* Main.storyboard */; };
 		83B0A8B81E6F09C00049587A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83B0A8B71E6F09C00049587A /* Assets.xcassets */; };
 		83B0A8BB1E6F09C00049587A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83B0A8B91E6F09C00049587A /* LaunchScreen.storyboard */; };
 		83B0A8C61E6F09C00049587A /* FlexboxLayoutKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B0A8C51E6F09C00049587A /* FlexboxLayoutKitTests.swift */; };
 		83B0A8D11E6F09C00049587A /* FlexboxLayoutKitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B0A8D01E6F09C00049587A /* FlexboxLayoutKitUITests.swift */; };
+		83B0A8EC1E6F0A5E0049587A /* YGNodeList.c in Sources */ = {isa = PBXBuildFile; fileRef = 83B0A8E81E6F0A5E0049587A /* YGNodeList.c */; };
+		83B0A8ED1E6F0A5E0049587A /* Yoga.c in Sources */ = {isa = PBXBuildFile; fileRef = 83B0A8EA1E6F0A5E0049587A /* Yoga.c */; };
+		83B0A8F11E6F0E5C0049587A /* FlexboxLayoutProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B0A8F01E6F0E5C0049587A /* FlexboxLayoutProtocol.swift */; };
+		83B0A8F31E6F0EC50049587A /* FBLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B0A8F21E6F0EC50049587A /* FBLayout.swift */; };
+		83B0A8FC1E714DAE0049587A /* FBLayoutDiv.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B0A8FB1E714DAE0049587A /* FBLayoutDiv.swift */; };
+		83D48C8C1E726EC8000953C6 /* ViewFlexbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D48C8B1E726EC8000953C6 /* ViewFlexbox.swift */; };
+		83D48C8E1E72B013000953C6 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 83D48C8D1E72B013000953C6 /* data.json */; };
+		83D48C901E72B0FD000953C6 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D48C8F1E72B0FD000953C6 /* SecondViewController.swift */; };
+		83D48C921E72B1B9000953C6 /* FeedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D48C911E72B1B9000953C6 /* FeedModel.swift */; };
+		83D48C941E72B212000953C6 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D48C931E72B212000953C6 /* FeedCell.swift */; };
+		83EFA0D51E739BA4001ED0DD /* FlexboxEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83EFA0D41E739BA4001ED0DD /* FlexboxEnums.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +47,6 @@
 		83B0A8AD1E6F09C00049587A /* FlexboxLayoutKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlexboxLayoutKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83B0A8B01E6F09C00049587A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		83B0A8B21E6F09C00049587A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		83B0A8B51E6F09C00049587A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		83B0A8B71E6F09C00049587A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		83B0A8BA1E6F09C00049587A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		83B0A8BC1E6F09C00049587A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -47,6 +56,23 @@
 		83B0A8CC1E6F09C00049587A /* FlexboxLayoutKitUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlexboxLayoutKitUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		83B0A8D01E6F09C00049587A /* FlexboxLayoutKitUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlexboxLayoutKitUITests.swift; sourceTree = "<group>"; };
 		83B0A8D21E6F09C00049587A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		83B0A8E61E6F0A5E0049587A /* YGEnums.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YGEnums.h; sourceTree = "<group>"; };
+		83B0A8E71E6F0A5E0049587A /* YGMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YGMacros.h; sourceTree = "<group>"; };
+		83B0A8E81E6F0A5E0049587A /* YGNodeList.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = YGNodeList.c; sourceTree = "<group>"; };
+		83B0A8E91E6F0A5E0049587A /* YGNodeList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YGNodeList.h; sourceTree = "<group>"; };
+		83B0A8EA1E6F0A5E0049587A /* Yoga.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Yoga.c; sourceTree = "<group>"; };
+		83B0A8EB1E6F0A5E0049587A /* Yoga.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Yoga.h; sourceTree = "<group>"; };
+		83B0A8F01E6F0E5C0049587A /* FlexboxLayoutProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlexboxLayoutProtocol.swift; sourceTree = "<group>"; };
+		83B0A8F21E6F0EC50049587A /* FBLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBLayout.swift; sourceTree = "<group>"; };
+		83B0A8F51E6F0F050049587A /* FlexboxUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlexboxUtility.h; sourceTree = "<group>"; };
+		83B0A8FA1E7005AB0049587A /* flexbox-bridge-header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "flexbox-bridge-header.h"; sourceTree = "<group>"; };
+		83B0A8FB1E714DAE0049587A /* FBLayoutDiv.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBLayoutDiv.swift; sourceTree = "<group>"; };
+		83D48C8B1E726EC8000953C6 /* ViewFlexbox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewFlexbox.swift; sourceTree = "<group>"; };
+		83D48C8D1E72B013000953C6 /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
+		83D48C8F1E72B0FD000953C6 /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		83D48C911E72B1B9000953C6 /* FeedModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedModel.swift; sourceTree = "<group>"; };
+		83D48C931E72B212000953C6 /* FeedCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
+		83EFA0D41E739BA4001ED0DD /* FlexboxEnums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlexboxEnums.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,9 +123,13 @@
 		83B0A8AF1E6F09C00049587A /* FlexboxLayoutKit */ = {
 			isa = PBXGroup;
 			children = (
+				83B0A8E41E6F0A5E0049587A /* FlexboxLayout */,
 				83B0A8B01E6F09C00049587A /* AppDelegate.swift */,
 				83B0A8B21E6F09C00049587A /* ViewController.swift */,
-				83B0A8B41E6F09C00049587A /* Main.storyboard */,
+				83D48C8F1E72B0FD000953C6 /* SecondViewController.swift */,
+				83D48C911E72B1B9000953C6 /* FeedModel.swift */,
+				83D48C931E72B212000953C6 /* FeedCell.swift */,
+				83D48C8D1E72B013000953C6 /* data.json */,
 				83B0A8B71E6F09C00049587A /* Assets.xcassets */,
 				83B0A8B91E6F09C00049587A /* LaunchScreen.storyboard */,
 				83B0A8BC1E6F09C00049587A /* Info.plist */,
@@ -123,6 +153,34 @@
 				83B0A8D21E6F09C00049587A /* Info.plist */,
 			);
 			path = FlexboxLayoutKitUITests;
+			sourceTree = "<group>";
+		};
+		83B0A8E41E6F0A5E0049587A /* FlexboxLayout */ = {
+			isa = PBXGroup;
+			children = (
+				83B0A8E51E6F0A5E0049587A /* Yoga */,
+				83B0A8F01E6F0E5C0049587A /* FlexboxLayoutProtocol.swift */,
+				83B0A8F21E6F0EC50049587A /* FBLayout.swift */,
+				83B0A8FB1E714DAE0049587A /* FBLayoutDiv.swift */,
+				83D48C8B1E726EC8000953C6 /* ViewFlexbox.swift */,
+				83EFA0D41E739BA4001ED0DD /* FlexboxEnums.swift */,
+				83B0A8FA1E7005AB0049587A /* flexbox-bridge-header.h */,
+			);
+			path = FlexboxLayout;
+			sourceTree = "<group>";
+		};
+		83B0A8E51E6F0A5E0049587A /* Yoga */ = {
+			isa = PBXGroup;
+			children = (
+				83B0A8E61E6F0A5E0049587A /* YGEnums.h */,
+				83B0A8E71E6F0A5E0049587A /* YGMacros.h */,
+				83B0A8E81E6F0A5E0049587A /* YGNodeList.c */,
+				83B0A8E91E6F0A5E0049587A /* YGNodeList.h */,
+				83B0A8EA1E6F0A5E0049587A /* Yoga.c */,
+				83B0A8EB1E6F0A5E0049587A /* Yoga.h */,
+				83B0A8F51E6F0F050049587A /* FlexboxUtility.h */,
+			);
+			path = Yoga;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -237,7 +295,7 @@
 			files = (
 				83B0A8BB1E6F09C00049587A /* LaunchScreen.storyboard in Resources */,
 				83B0A8B81E6F09C00049587A /* Assets.xcassets in Resources */,
-				83B0A8B61E6F09C00049587A /* Main.storyboard in Resources */,
+				83D48C8E1E72B013000953C6 /* data.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,8 +320,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83B0A8F11E6F0E5C0049587A /* FlexboxLayoutProtocol.swift in Sources */,
 				83B0A8B31E6F09C00049587A /* ViewController.swift in Sources */,
+				83B0A8FC1E714DAE0049587A /* FBLayoutDiv.swift in Sources */,
+				83D48C901E72B0FD000953C6 /* SecondViewController.swift in Sources */,
+				83D48C941E72B212000953C6 /* FeedCell.swift in Sources */,
 				83B0A8B11E6F09C00049587A /* AppDelegate.swift in Sources */,
+				83B0A8F31E6F0EC50049587A /* FBLayout.swift in Sources */,
+				83B0A8EC1E6F0A5E0049587A /* YGNodeList.c in Sources */,
+				83D48C921E72B1B9000953C6 /* FeedModel.swift in Sources */,
+				83EFA0D51E739BA4001ED0DD /* FlexboxEnums.swift in Sources */,
+				83B0A8ED1E6F0A5E0049587A /* Yoga.c in Sources */,
+				83D48C8C1E726EC8000953C6 /* ViewFlexbox.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,14 +367,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		83B0A8B41E6F09C00049587A /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				83B0A8B51E6F09C00049587A /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		83B0A8B91E6F09C00049587A /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -420,6 +480,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zmj.FlexboxLayoutKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "FlexboxLayoutKit/FlexboxLayout/flexbox-bridge-header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -433,6 +494,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zmj.FlexboxLayoutKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "FlexboxLayoutKit/FlexboxLayout/flexbox-bridge-header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -514,6 +576,7 @@
 				83B0A8D71E6F09C00049587A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		83B0A8D81E6F09C00049587A /* Build configuration list for PBXNativeTarget "FlexboxLayoutKitTests" */ = {
 			isa = XCConfigurationList;
@@ -522,6 +585,7 @@
 				83B0A8DA1E6F09C00049587A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		83B0A8DB1E6F09C00049587A /* Build configuration list for PBXNativeTarget "FlexboxLayoutKitUITests" */ = {
 			isa = XCConfigurationList;
@@ -530,6 +594,7 @@
 				83B0A8DD1E6F09C00049587A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
