@@ -12,7 +12,7 @@ override func viewDidLoad() {
         
         self.view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         
-        let scrollView = UIScrollView(frame: self.view.bounds)
+        let scrollView = UIScrollView(frame: CGRect.init(x: 0, y: 0, width: self.view.bounds.size.width, height: self.view.bounds.size.height - 64))
         self.view.addSubview(scrollView)
     
         //center
@@ -20,7 +20,7 @@ override func viewDidLoad() {
         scrollView.addSubview(contentView1)
         contentView1.backgroundColor = UIColor.brown
         let label = UILabel()
-        label.text = "please see the demo in the FlexBoxPlayGround"
+        label.text = "please see the demo in the FlexBoxPlayground"
         label.numberOfLines = 0
         label.backgroundColor = UIColor.orange
         contentView1.addSubview(label)
@@ -82,11 +82,41 @@ override func viewDidLoad() {
             make.alignContent.equalTo(FBAlign.center)
             make.alignItems.equalTo(FBAlign.flexStart)
             make.margin.equalTo(UIEdgeInsetsMake(0, 10, 0, 10))
-            make.size.equalTo(CGSize(width: self.view.bounds.size.width, height: 400))
+            make.size.equalTo(CGSize(width: self.view.bounds.size.width-20, height: 400))
         }
         //contentView2.fb_children = [child1,child2,child3,child4,child5,child6,child7,child8,child9,child10,child11,child12,div1]
         contentView2.fb_applyLayout()
         scrollView.addSubview(contentView2)
+        
+        
+        let child15 = gennerateView(color: UIColor.red)
+        let child16 = gennerateView(color: UIColor.black)
+        child16.makeFlexbox{make in
+            make.alignSelf.equalTo(FBAlign.center)
+        }
+        let child17 = UIView()
+        child17.backgroundColor = UIColor.blue
+        child17.layer.cornerRadius = 10
+        child17.makeFlexbox{make in
+            make.size.equalTo(child15)
+            make.alignSelf.equalTo(FBAlign.flexEnd)
+        }
+        let contentView3 = UIView()
+        contentView3.layer.cornerRadius = 5.0
+        contentView3.layer.borderColor = UIColor.black.cgColor
+        contentView3.layer.borderWidth = 1.0
+        contentView3.layer.masksToBounds = true
+        contentView3.addSubview(child15)
+        contentView3.addSubview(child16)
+        contentView3.addSubview(child17)
+        contentView3.makeFlexbox{make in
+            make.size.equalTo(CGSize.init(width: 120, height: 120))
+            make.margin.equalTo(UIEdgeInsetsMake(20, 20, 20, 20))
+            make.flexDirection.equalTo(FBFlexDirection.column)
+            make.justifyContent.equalTo(FBJustify.spaceAround)
+        }
+        scrollView.addSubview(contentView3)
+        
         
         scrollView.makeFlexbox{
             make in
@@ -94,8 +124,6 @@ override func viewDidLoad() {
             make.justifyContent.equalTo(FBJustify.flexStart)
         }
         scrollView.fb_applyLayout()
-        
-        
         
         self.title = "flexboxdemo1"
     }
@@ -113,12 +141,27 @@ override func viewDidLoad() {
         label.textAlignment = .center
         label.makeFlexbox{
             make in
-            make.margin.equalTo(UIEdgeInsetsMake(5, 5, 5, 5)).wrapContent()
-            //make.padding.equalTo(UIEdgeInsetsMake(2, 3, 2, 3)).wrapContent()
+            make.margin.equalTo(UIEdgeInsetsMake(5, 5, 5, 5))
+            make.padding.equalTo(UIEdgeInsetsMake(5, 5, 5, 5)).wrapContent()
         }
         
         return label;
     }
+    
+    
+    private func gennerateView(color:UIColor)->UIView{
+        
+        let label = UIView()
+        label.layer.masksToBounds = true
+        label.layer.cornerRadius = 10.0
+        label.backgroundColor = color
+        label.makeFlexbox{make in
+            make.size.equalTo(CGSize(width: 20, height: 20))
+        }
+        
+        return label
+    }
+
 
 
 

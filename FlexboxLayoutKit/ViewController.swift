@@ -24,7 +24,7 @@ class ViewController: UIViewController {
         scrollView.addSubview(contentView1)
         contentView1.backgroundColor = UIColor.brown
         let label = UILabel()
-        label.text = "please see the demo in the FlexBoxPlayGround"
+        label.text = "please see the demo in the FlexBoxPlayground"
         label.numberOfLines = 0
         label.backgroundColor = UIColor.orange
         contentView1.addSubview(label)

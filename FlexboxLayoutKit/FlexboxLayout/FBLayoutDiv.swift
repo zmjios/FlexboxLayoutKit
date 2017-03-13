@@ -86,7 +86,20 @@ import Foundation
     public func fb_removeChild(_ child: FlexboxLayoutProtocol) {
         
         //todo: how to conform Equatable
-        
+        var newChildren = fb_children
+        var index:Int?
+        for i in 0..<newChildren.count{
+            if child is NSObject && newChildren[i] is NSObject{
+                if child as! NSObject == newChildren[i] as! NSObject {
+                    index = i
+                    break;
+                }
+            }
+        }
+        if index != nil{
+            newChildren.remove(at: index!)
+        }
+        setFb_Children(newChildren)
     }
     
     public func fb_removeAllChild() {
