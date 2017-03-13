@@ -11,7 +11,7 @@ import UIKit
 
 public class FBLayoutMaker:NSObject{
     
-    public var layout:FBLayout
+    public unowned var layout:FBLayout
     fileprivate var fbStyles:[String] = []
     
     //MARK: - propreties
