@@ -8,7 +8,7 @@
 
 import Foundation
 
-@objc public protocol FlexboxLayoutProtocol {
+@objc public protocol FlexboxLayoutProtocol{
     
     // the UIView or The FBLayoutDiv associate's layout
     var fb_layout:FBLayout{get}
@@ -40,8 +40,6 @@ import Foundation
     
     func makeFlexbox(_ closure:(_ make:FBLayoutMaker)-> Void)
 }
-
-
 
 
 public protocol FlexboxConstantTarget{

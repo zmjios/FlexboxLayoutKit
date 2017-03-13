@@ -47,6 +47,8 @@ extension UIView:FlexboxLayoutProtocol{
             objc_setAssociatedObject(self, &uiview_fblayout_children_key, newValue, .OBJC_ASSOCIATION_RETAIN)
             fb_layout.removeAllChild()
             for child in newValue{
+                //in this case,the child may be have addSubview in ContainerView,so we must remove parent
+                YGNodeResetParent(child.fb_layout.getNode())
                 fb_layout.addChild(layout: child.fb_layout)
             }
         }
@@ -55,12 +57,35 @@ extension UIView:FlexboxLayoutProtocol{
     // MARK: - collection
     
     public func fb_addChild(_ child: FlexboxLayoutProtocol) {
+        
+        if self.fb_children.count == 0{
+            //first the container may be contain subviews,so must be include
+            self.fb_children = self.subviews
+        }
+        
+        //if subview have contain in div,we must reset fb_children
+        if let div = child as? FBLayoutDiv{
+            for subItem in div.fb_children{
+                if let subView = subItem as? UIView{
+                    if self.subviews.contains(subView) {
+                        fb_removeChild(subItem)
+                    }
+                }
+            }
+        }
+        
         var newChildren = fb_children
         newChildren.append(child)
         self.fb_children = newChildren
     }
     
     public func fb_addChildren(_ children: [FlexboxLayoutProtocol]) {
+        
+        if self.fb_children.count == 0{
+            //first the container may be contain subviews,so must be include
+            self.fb_children = self.subviews
+        }
+        
         var newChildren = fb_children
         newChildren.append(contentsOf: children)
         self.fb_children = newChildren
@@ -68,6 +93,12 @@ extension UIView:FlexboxLayoutProtocol{
     }
     
     public func fb_insertChild(_ child: FlexboxLayoutProtocol, at index: Int) {
+        
+        if self.fb_children.count == 0{
+            //first the container may be contain subviews,so must be include
+            self.fb_children = self.subviews
+        }
+        
         var newChildren = fb_children
         newChildren.insert(child, at: index)
         self.fb_children = newChildren
@@ -77,6 +108,20 @@ extension UIView:FlexboxLayoutProtocol{
     public func fb_removeChild(_ child: FlexboxLayoutProtocol) {
         
         //todo: how to conform Equatable
+        var newChildren = fb_children
+        var index:Int?
+        for i in 0..<newChildren.count{
+            if child is NSObject && newChildren[i] is NSObject{
+                if child as! NSObject == newChildren[i] as! NSObject {
+                    index = i
+                    break;
+                }
+            }
+        }
+        if index != nil{
+            newChildren.remove(at: index!)
+        }
+        self.fb_children = newChildren
     }
     
     public func fb_removeAllChild() {
