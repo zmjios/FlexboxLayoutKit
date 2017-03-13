@@ -197,3 +197,37 @@ extension UIView:FlexboxLayoutProtocol{
     }
 
 }
+
+
+
+
+
+extension UIScrollView{
+    
+    
+    public override func fb_applyLayout(){
+        
+        //in most cases,the container have set width an height,we just layout subViews
+        fb_applyLayouSize(self.bounds.size)
+        
+        //if contain subViews, find the maxX and maxY ,just for autoresize contentSize
+        if self.subviews.count > 0{
+            
+            var maxX:CGFloat = self.bounds.size.width
+            var maxY:CGFloat = self.bounds.size.height
+            
+            for subView in self.subviews{
+                
+                if subView.frame.maxX > maxX{
+                    maxX = subView.frame.maxX
+                }
+                
+                if subView.frame.maxY > maxY{
+                    maxY = subView.frame.maxY
+                }
+            }
+            
+            self.contentSize = CGSize(width: maxX + self.contentInset.right, height: maxY + self.contentInset.bottom)
+        }
+    }
+}

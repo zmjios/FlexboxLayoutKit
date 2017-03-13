@@ -62,6 +62,8 @@ extension CGPoint:FlexboxConstantTarget{}
 
 extension UIEdgeInsets:FlexboxConstantTarget{}
 
+extension UIView:FlexboxConstantTarget{}
+
 //extension CGRect:FlexboxConstantTarget{}
 
 
