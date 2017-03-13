@@ -9,6 +9,8 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    private var contentView2:UIView?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,11 +18,11 @@ class ViewController: UIViewController {
         
         self.view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         
-        let scrollView = UIScrollView(frame: CGRect.init(x: 0, y: 0, width: self.view.bounds.size.width, height: self.view.bounds.size.height - 64))
+        let scrollView = UIScrollView(frame: CGRect(x: 0, y: 0, width: self.view.bounds.size.width, height: self.view.bounds.size.height - 44))
         self.view.addSubview(scrollView)
     
         //center
-        let contentView1 = UIView.init(frame: CGRect.init(x: 0, y: 0, width: self.view.bounds.size.width, height: 200))
+        let contentView1 = UIView()
         scrollView.addSubview(contentView1)
         contentView1.backgroundColor = UIColor.brown
         let label = UILabel()
@@ -29,12 +31,13 @@ class ViewController: UIViewController {
         label.backgroundColor = UIColor.orange
         contentView1.addSubview(label)
         label.makeFlexbox{make in
-            make.margin.equalTo(UIEdgeInsetsMake(40, 20, 0, 0))
+            make.margin.equalTo(UIEdgeInsetsMake(10, 20, 0, 0))
             make.size.equalTo(CGSize(width: 300, height: 80)).wrapContent()
         }
         contentView1.makeFlexbox{make in
             make.justifyContent.equalTo(FBJustify.center)
             make.alignItems.equalTo(FBAlign.center)
+            make.size.equalTo(CGSize(width: self.view.bounds.size.width, height: 160))
         }
         contentView1.fb_applyLayout()
         
@@ -62,35 +65,45 @@ class ViewController: UIViewController {
             make.flexShrink.equalTo(1.0)
         }
         let div1 = FBLayoutDiv.layoutDiv(direction: FBFlexDirection.row, justify: FBJustify.flexStart, alignItems: FBAlign.flexStart, children: [child13,child14])
-        let contentView2 = UIView()
-        contentView2.addSubview(child1)
-        contentView2.addSubview(child2)
-        contentView2.addSubview(child3)
-        contentView2.addSubview(child4)
-        contentView2.addSubview(child5)
-        contentView2.addSubview(child6)
-        contentView2.addSubview(child7)
-        contentView2.addSubview(child8)
-        contentView2.addSubview(child9)
-        contentView2.addSubview(child10)
-        contentView2.addSubview(child11)
-        contentView2.addSubview(child12)
-        contentView2.addSubview(child13)
-        contentView2.addSubview(child14)
-        contentView2.fb_addChild(div1)
-        contentView2.makeFlexbox{
-            make in
-            make.flexDirection.equalTo(FBFlexDirection.row)
-            make.flexWrap.equalTo(FBWrap.wrap)
-            make.justifyContent.equalTo(FBJustify.flexStart)
-            make.alignContent.equalTo(FBAlign.center)
-            make.alignItems.equalTo(FBAlign.flexStart)
-            make.margin.equalTo(UIEdgeInsetsMake(0, 10, 0, 10))
-            make.size.equalTo(CGSize(width: self.view.bounds.size.width-20, height: 400))
+        contentView2 = UIView()
+        if let contentView2 = contentView2 {
+            contentView2.addSubview(child1)
+            contentView2.addSubview(child2)
+            contentView2.addSubview(child3)
+            contentView2.addSubview(child4)
+            contentView2.addSubview(child5)
+            contentView2.addSubview(child6)
+            contentView2.addSubview(child7)
+            contentView2.addSubview(child8)
+            contentView2.addSubview(child9)
+            contentView2.addSubview(child10)
+            contentView2.addSubview(child11)
+            contentView2.addSubview(child12)
+            contentView2.addSubview(child13)
+            contentView2.addSubview(child14)
+            contentView2.fb_addChild(div1)
+            contentView2.makeFlexbox{
+                make in
+                make.flexDirection.equalTo(FBFlexDirection.row)
+                make.flexWrap.equalTo(FBWrap.wrap)
+                make.justifyContent.equalTo(FBJustify.flexStart)
+                make.alignContent.equalTo(FBAlign.center)
+                make.alignItems.equalTo(FBAlign.flexStart)
+                make.margin.equalTo(UIEdgeInsetsMake(0, 10, 0, 10))
+                make.size.equalTo(CGSize(width: self.view.bounds.size.width-20, height: 400))
+            }
+            //contentView2.fb_children = [child1,child2,child3,child4,child5,child6,child7,child8,child9,child10,child11,child12,div1]
+            contentView2.fb_applyLayout()
+            scrollView.addSubview(contentView2)
         }
-        //contentView2.fb_children = [child1,child2,child3,child4,child5,child6,child7,child8,child9,child10,child11,child12,div1]
-        contentView2.fb_applyLayout()
-        scrollView.addSubview(contentView2)
+        
+        let seg = UISegmentedControl(items: ["jyFlexStart","jySpaceBetween","aIcenter","fDRow"])
+        seg.addTarget(self, action: #selector(switchSegAction(seg:)), for: [UIControlEvents.valueChanged])
+        seg.makeFlexbox{
+            make in
+            make.size.equalTo(CGSize(width: self.view.bounds.size.width, height: 44))
+        }
+        scrollView.addSubview(seg)
         
         
         let child15 = gennerateView(color: UIColor.red)
@@ -114,7 +127,7 @@ class ViewController: UIViewController {
         contentView3.addSubview(child16)
         contentView3.addSubview(child17)
         contentView3.makeFlexbox{make in
-            make.size.equalTo(CGSize.init(width: 120, height: 120))
+            make.size.equalTo(CGSize(width: 120, height: 120))
             make.margin.equalTo(UIEdgeInsetsMake(20, 20, 20, 20))
             make.flexDirection.equalTo(FBFlexDirection.column)
             make.justifyContent.equalTo(FBJustify.spaceAround)
@@ -165,7 +178,67 @@ class ViewController: UIViewController {
         
         return label
     }
+    
+    @objc private func switchSegAction(seg:UISegmentedControl){
+        
+        UIView.animate(withDuration: 0.3, animations: {
+            
+            switch seg.selectedSegmentIndex {
+                
+            case 0:
+                self.contentView2!.makeFlexbox{
+                    make in
+                    make.flexDirection.equalTo(FBFlexDirection.row)
+                    make.flexWrap.equalTo(FBWrap.wrap)
+                    make.justifyContent.equalTo(FBJustify.flexStart)
+                    make.alignContent.equalTo(FBAlign.center)
+                    make.alignItems.equalTo(FBAlign.flexStart)
+                    make.margin.equalTo(UIEdgeInsetsMake(0, 10, 0, 10))
+                    make.size.equalTo(CGSize(width: self.view.bounds.size.width-20, height: 400))
+                }
+            case 1:
+                self.contentView2!.makeFlexbox{
+                    make in
+                    make.flexDirection.equalTo(FBFlexDirection.row)
+                    make.flexWrap.equalTo(FBWrap.wrap)
+                    make.justifyContent.equalTo(FBJustify.spaceBetween)
+                    make.alignContent.equalTo(FBAlign.center)
+                    make.alignItems.equalTo(FBAlign.flexStart)
+                    make.margin.equalTo(UIEdgeInsetsMake(0, 10, 0, 10))
+                    make.size.equalTo(CGSize(width: self.view.bounds.size.width-20, height: 400))
+                }
+            case 2:
+                self.contentView2!.makeFlexbox{
+                    make in
+                    make.flexDirection.equalTo(FBFlexDirection.row)
+                    make.flexWrap.equalTo(FBWrap.wrap)
+                    make.justifyContent.equalTo(FBJustify.flexStart)
+                    make.alignContent.equalTo(FBAlign.center)
+                    make.alignItems.equalTo(FBAlign.center)
+                    make.margin.equalTo(UIEdgeInsetsMake(0, 10, 0, 10))
+                    make.size.equalTo(CGSize(width: self.view.bounds.size.width-20, height: 400))
+                }
+            case 3:
+                self.contentView2!.makeFlexbox{
+                    make in
+                    make.flexDirection.equalTo(FBFlexDirection.column)
+                    make.flexWrap.equalTo(FBWrap.noWrap)
+                    make.justifyContent.equalTo(FBJustify.flexStart)
+                    make.alignContent.equalTo(FBAlign.flexStart)
+                    make.alignItems.equalTo(FBAlign.flexStart)
+                    make.margin.equalTo(UIEdgeInsetsMake(0, 10, 0, 10))
+                    make.size.equalTo(CGSize(width: self.view.bounds.size.width-20, height: 400))
+                }
+            default: break
+            }
+            
+            self.contentView2!.superview!.fb_applyLayout()
 
+        })
+        
+        
+    }
+    
 
 }
 
