@@ -10,6 +10,7 @@ import Foundation
 
 private var uiview_fblayout_key = "fb_layout_key"
 private var uiview_fblayout_children_key = "fblayout_children_key"
+private var uiview_fblayout_include_key = "fblayout_include_key"
 
 
 func bridge<T : AnyObject>(obj : T) -> UnsafeMutableRawPointer {
@@ -52,6 +53,24 @@ extension UIView:FlexboxLayoutProtocol{
                 fb_layout.addChild(layout: child.fb_layout)
             }
         }
+    }
+    
+    public var isIncludeInLayout:Bool{
+        
+        //todo:isIncludeInLayout is no, don't calculate in ViewHierachy
+        
+        get{
+            var include:Bool? = objc_getAssociatedObject(self, &uiview_fblayout_include_key) as! Bool?
+            if include == nil {
+                include = true
+                objc_setAssociatedObject(self, &uiview_fblayout_include_key, include, .OBJC_ASSOCIATION_ASSIGN)
+            }
+            return include!
+        }
+        set{
+            objc_setAssociatedObject(self, &uiview_fblayout_include_key, newValue, .OBJC_ASSOCIATION_ASSIGN)
+        }
+        
     }
     
     // MARK: - collection
