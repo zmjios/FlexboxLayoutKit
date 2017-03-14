@@ -13,7 +13,9 @@
 #import "Yoga.h"
 #import <UIKit/UIKit.h>
 
-const CGFloat fb_undefined = YGUndefined;
+static CGFloat YGGet_undefined(){
+    return YGUndefined;
+}
 
 static CGFloat YGRoundPixelValue(CGFloat value)
 {

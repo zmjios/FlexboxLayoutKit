@@ -113,7 +113,7 @@ class FeedCell: UITableViewCell {
         }
         
         self.contentView.fb_children = [titleLabel,contentLabel,contentImageView,div]
-        self.contentView.fb_applyLayouSize(CGSize(width: UIScreen.main.bounds.size.width, height:fb_undefined))
+        self.contentView.fb_applyLayouSize(CGSize(width: UIScreen.main.bounds.size.width, height:YGGet_undefined()))
     }
 
 }

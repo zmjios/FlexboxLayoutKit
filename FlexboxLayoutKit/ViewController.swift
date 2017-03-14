@@ -90,7 +90,7 @@ class ViewController: UIViewController {
                 make.alignContent.equalTo(FBAlign.center)
                 make.alignItems.equalTo(FBAlign.flexStart)
                 make.margin.equalTo(UIEdgeInsetsMake(0, 10, 0, 10))
-                make.size.equalTo(CGSize(width: self.view.bounds.size.width-20, height: 400))
+                make.size.equalTo(CGSize(width: self.view.bounds.size.width-20, height: YGGet_undefined()))
             }
             //contentView2.fb_children = [child1,child2,child3,child4,child5,child6,child7,child8,child9,child10,child11,child12,div1]
             contentView2.fb_applyLayout()
@@ -194,7 +194,7 @@ class ViewController: UIViewController {
                     make.alignContent.equalTo(FBAlign.center)
                     make.alignItems.equalTo(FBAlign.flexStart)
                     make.margin.equalTo(UIEdgeInsetsMake(0, 10, 0, 10))
-                    make.size.equalTo(CGSize(width: self.view.bounds.size.width-20, height: 400))
+                    make.size.equalTo(CGSize(width: self.view.bounds.size.width-20, height: YGGet_undefined()))
                 }
             case 1:
                 self.contentView2!.makeFlexbox{
@@ -205,7 +205,7 @@ class ViewController: UIViewController {
                     make.alignContent.equalTo(FBAlign.center)
                     make.alignItems.equalTo(FBAlign.flexStart)
                     make.margin.equalTo(UIEdgeInsetsMake(0, 10, 0, 10))
-                    make.size.equalTo(CGSize(width: self.view.bounds.size.width-20, height: 400))
+                    make.size.equalTo(CGSize(width: self.view.bounds.size.width-20, height: YGGet_undefined()))
                 }
             case 2:
                 self.contentView2!.makeFlexbox{
@@ -216,7 +216,7 @@ class ViewController: UIViewController {
                     make.alignContent.equalTo(FBAlign.center)
                     make.alignItems.equalTo(FBAlign.center)
                     make.margin.equalTo(UIEdgeInsetsMake(0, 10, 0, 10))
-                    make.size.equalTo(CGSize(width: self.view.bounds.size.width-20, height: 400))
+                    make.size.equalTo(CGSize(width: self.view.bounds.size.width-20, height: YGGet_undefined()))
                 }
             case 3:
                 self.contentView2!.makeFlexbox{
@@ -227,7 +227,7 @@ class ViewController: UIViewController {
                     make.alignContent.equalTo(FBAlign.flexStart)
                     make.alignItems.equalTo(FBAlign.flexStart)
                     make.margin.equalTo(UIEdgeInsetsMake(0, 10, 0, 10))
-                    make.size.equalTo(CGSize(width: self.view.bounds.size.width-20, height: 400))
+                    make.size.equalTo(CGSize(width: self.view.bounds.size.width-20, height: YGGet_undefined()))
                 }
             default: break
             }
