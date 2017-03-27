@@ -8,11 +8,6 @@
 
 import Foundation
 
-private var uiview_fblayout_key = "fb_layout_key"
-private var uiview_fblayout_children_key = "fblayout_children_key"
-private var uiview_fblayout_include_key = "fblayout_include_key"
-
-
 func bridge<T : AnyObject>(obj : T) -> UnsafeMutableRawPointer {
     return UnsafeMutableRawPointer(Unmanaged.passUnretained(obj).toOpaque())
 }
@@ -23,13 +18,19 @@ func bridge<T : AnyObject>(ptr : UnsafeMutableRawPointer) -> T {
 
 extension UIView:FlexboxLayoutProtocol{
     
+    private struct AssociatedKeys {
+        static var fblayout_key          = "fb_layout_key"
+        static var fblayout_children_key = "fblayout_children_key"
+        static var fblayout_include_key  = "fblayout_include_key"
+    }
+    
     public var fb_layout: FBLayout{
         
-        var layout:FBLayout? = objc_getAssociatedObject(self,&uiview_fblayout_key) as! FBLayout?
+        var layout:FBLayout? = objc_getAssociatedObject(self,&AssociatedKeys.fblayout_key) as! FBLayout?
         if layout == nil{
             layout = FBLayout()
             layout!.context = self
-            objc_setAssociatedObject(self, &uiview_fblayout_key, layout, .OBJC_ASSOCIATION_RETAIN)
+            objc_setAssociatedObject(self, &AssociatedKeys.fblayout_key, layout, .OBJC_ASSOCIATION_RETAIN)
         }
         
         return layout!
@@ -37,15 +38,15 @@ extension UIView:FlexboxLayoutProtocol{
     
     public var fb_children: [FlexboxLayoutProtocol]{
         get{
-            var children = objc_getAssociatedObject(self, &uiview_fblayout_children_key)
+            var children = objc_getAssociatedObject(self, &AssociatedKeys.fblayout_children_key)
             if children == nil{
                 children = [FlexboxLayoutProtocol]()
-                objc_setAssociatedObject(self, &uiview_fblayout_children_key, children, .OBJC_ASSOCIATION_RETAIN)
+                objc_setAssociatedObject(self, &AssociatedKeys.fblayout_children_key, children, .OBJC_ASSOCIATION_RETAIN)
             }
             return children as! [FlexboxLayoutProtocol]
         }
         set{
-            objc_setAssociatedObject(self, &uiview_fblayout_children_key, newValue, .OBJC_ASSOCIATION_RETAIN)
+            objc_setAssociatedObject(self, &AssociatedKeys.fblayout_children_key, newValue, .OBJC_ASSOCIATION_RETAIN)
             fb_layout.removeAllChild()
             for child in newValue{
                 //in this case,the child may be have addSubview in ContainerView,so we must remove parent
@@ -60,15 +61,15 @@ extension UIView:FlexboxLayoutProtocol{
         //todo:isIncludeInLayout is no, don't calculate in ViewHierachy
         
         get{
-            var include:Bool? = objc_getAssociatedObject(self, &uiview_fblayout_include_key) as! Bool?
+            var include:Bool? = objc_getAssociatedObject(self, &AssociatedKeys.fblayout_include_key) as! Bool?
             if include == nil {
                 include = true
-                objc_setAssociatedObject(self, &uiview_fblayout_include_key, include, .OBJC_ASSOCIATION_ASSIGN)
+                objc_setAssociatedObject(self, &AssociatedKeys.fblayout_include_key, include, .OBJC_ASSOCIATION_ASSIGN)
             }
             return include!
         }
         set{
-            objc_setAssociatedObject(self, &uiview_fblayout_include_key, newValue, .OBJC_ASSOCIATION_ASSIGN)
+            objc_setAssociatedObject(self, &AssociatedKeys.fblayout_include_key, newValue, .OBJC_ASSOCIATION_ASSIGN)
         }
         
     }
@@ -218,9 +219,6 @@ extension UIView:FlexboxLayoutProtocol{
 }
 
 
-
-
-
 extension UIScrollView{
     
     
@@ -246,7 +244,7 @@ extension UIScrollView{
                 }
             }
             
-            self.contentSize = CGSize(width: maxX + self.contentInset.right, height: maxY + self.contentInset.bottom)
+            self.contentSize = CGSize(width: maxX + self.contentInset.right + self.contentInset.left, height: maxY + self.contentInset.bottom + self.contentInset.top)
         }
     }
 }

@@ -18,7 +18,7 @@
 		83B0A8F11E6F0E5C0049587A /* FlexboxLayoutProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B0A8F01E6F0E5C0049587A /* FlexboxLayoutProtocol.swift */; };
 		83B0A8F31E6F0EC50049587A /* FBLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B0A8F21E6F0EC50049587A /* FBLayout.swift */; };
 		83B0A8FC1E714DAE0049587A /* FBLayoutDiv.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B0A8FB1E714DAE0049587A /* FBLayoutDiv.swift */; };
-		83D48C8C1E726EC8000953C6 /* ViewFlexbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D48C8B1E726EC8000953C6 /* ViewFlexbox.swift */; };
+		83D48C8C1E726EC8000953C6 /* UIView+Flexbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D48C8B1E726EC8000953C6 /* UIView+Flexbox.swift */; };
 		83D48C8E1E72B013000953C6 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 83D48C8D1E72B013000953C6 /* data.json */; };
 		83D48C901E72B0FD000953C6 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D48C8F1E72B0FD000953C6 /* SecondViewController.swift */; };
 		83D48C921E72B1B9000953C6 /* FeedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D48C911E72B1B9000953C6 /* FeedModel.swift */; };
@@ -67,7 +67,7 @@
 		83B0A8F51E6F0F050049587A /* FlexboxUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlexboxUtility.h; sourceTree = "<group>"; };
 		83B0A8FA1E7005AB0049587A /* flexbox-bridge-header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "flexbox-bridge-header.h"; sourceTree = "<group>"; };
 		83B0A8FB1E714DAE0049587A /* FBLayoutDiv.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBLayoutDiv.swift; sourceTree = "<group>"; };
-		83D48C8B1E726EC8000953C6 /* ViewFlexbox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewFlexbox.swift; sourceTree = "<group>"; };
+		83D48C8B1E726EC8000953C6 /* UIView+Flexbox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Flexbox.swift"; sourceTree = "<group>"; };
 		83D48C8D1E72B013000953C6 /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
 		83D48C8F1E72B0FD000953C6 /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		83D48C911E72B1B9000953C6 /* FeedModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedModel.swift; sourceTree = "<group>"; };
@@ -162,7 +162,7 @@
 				83B0A8F01E6F0E5C0049587A /* FlexboxLayoutProtocol.swift */,
 				83B0A8F21E6F0EC50049587A /* FBLayout.swift */,
 				83B0A8FB1E714DAE0049587A /* FBLayoutDiv.swift */,
-				83D48C8B1E726EC8000953C6 /* ViewFlexbox.swift */,
+				83D48C8B1E726EC8000953C6 /* UIView+Flexbox.swift */,
 				83EFA0D41E739BA4001ED0DD /* FlexboxEnums.swift */,
 				83B0A8FA1E7005AB0049587A /* flexbox-bridge-header.h */,
 			);
@@ -331,7 +331,7 @@
 				83D48C921E72B1B9000953C6 /* FeedModel.swift in Sources */,
 				83EFA0D51E739BA4001ED0DD /* FlexboxEnums.swift in Sources */,
 				83B0A8ED1E6F0A5E0049587A /* Yoga.c in Sources */,
-				83D48C8C1E726EC8000953C6 /* ViewFlexbox.swift in Sources */,
+				83D48C8C1E726EC8000953C6 /* UIView+Flexbox.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
