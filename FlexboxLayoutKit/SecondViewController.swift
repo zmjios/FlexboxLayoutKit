@@ -36,7 +36,7 @@ class SecondViewController: UITableViewController {
     }
     
     
-    func loadData(complete: @escaping (Void)->Void){
+    func loadData(complete: @escaping ()->Void){
         
         DispatchQueue.global().async {
             if let dataFilePath = Bundle.main.path(forResource: "data", ofType: "json"){

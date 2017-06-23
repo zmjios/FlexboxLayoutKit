@@ -172,7 +172,7 @@ extension UIView:FlexboxLayoutProtocol{
         
     }
     
-    public func fb_applyLayout(){
+    @objc public func fb_applyLayout(){
         //in most cases,the container have set width an height,we just layout subViews
         fb_applyLayouSize(self.bounds.size)
     }
