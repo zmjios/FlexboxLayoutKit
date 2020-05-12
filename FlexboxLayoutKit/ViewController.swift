@@ -31,7 +31,7 @@ class ViewController: UIViewController {
         label.backgroundColor = UIColor.orange
         contentView1.addSubview(label)
         label.makeFlexbox{make in
-            make.margin.equalTo(UIEdgeInsetsMake(10, 20, 0, 0))
+            make.margin.equalTo(UIEdgeInsets(top: 10, left: 20, bottom: 0, right: 0))
             make.size.equalTo(CGSize(width: 300, height: 80)).wrapContent()
         }
         contentView1.makeFlexbox{make in
@@ -89,7 +89,7 @@ class ViewController: UIViewController {
                 make.justifyContent.equalTo(FBJustify.flexStart)
                 make.alignContent.equalTo(FBAlign.center)
                 make.alignItems.equalTo(FBAlign.flexStart)
-                make.margin.equalTo(UIEdgeInsetsMake(0, 10, 0, 10))
+                make.margin.equalTo(UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10))
                 make.size.equalTo(CGSize(width: self.view.bounds.size.width-20, height: YGGet_undefined()))
             }
             //contentView2.fb_children = [child1,child2,child3,child4,child5,child6,child7,child8,child9,child10,child11,child12,div1]
@@ -98,7 +98,7 @@ class ViewController: UIViewController {
         }
         
         let seg = UISegmentedControl(items: ["jyFlexStart","jySpaceBetween","aIcenter","fDRow"])
-        seg.addTarget(self, action: #selector(switchSegAction(seg:)), for: [UIControlEvents.valueChanged])
+        seg.addTarget(self, action: #selector(switchSegAction(seg:)), for: [UIControl.Event.valueChanged])
         seg.makeFlexbox{
             make in
             make.size.equalTo(CGSize(width: self.view.bounds.size.width, height: 44))
@@ -128,7 +128,7 @@ class ViewController: UIViewController {
         contentView3.addSubview(child17)
         contentView3.makeFlexbox{make in
             make.size.equalTo(CGSize(width: 120, height: 120))
-            make.margin.equalTo(UIEdgeInsetsMake(20, 20, 20, 20))
+            make.margin.equalTo(UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20))
             make.flexDirection.equalTo(FBFlexDirection.column)
             make.justifyContent.equalTo(FBJustify.spaceAround)
         }
@@ -158,8 +158,8 @@ class ViewController: UIViewController {
         label.textAlignment = .center
         label.makeFlexbox{
             make in
-            make.margin.equalTo(UIEdgeInsetsMake(5, 5, 5, 5))
-            make.padding.equalTo(UIEdgeInsetsMake(5, 5, 5, 5)).wrapContent()
+            make.margin.equalTo(UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5))
+            make.padding.equalTo(UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)).wrapContent()
         }
         
         return label;
@@ -193,7 +193,7 @@ class ViewController: UIViewController {
                     make.justifyContent.equalTo(FBJustify.flexStart)
                     make.alignContent.equalTo(FBAlign.center)
                     make.alignItems.equalTo(FBAlign.flexStart)
-                    make.margin.equalTo(UIEdgeInsetsMake(0, 10, 0, 10))
+                    make.margin.equalTo(UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10))
                     make.size.equalTo(CGSize(width: self.view.bounds.size.width-20, height: YGGet_undefined()))
                 }
             case 1:
@@ -204,7 +204,7 @@ class ViewController: UIViewController {
                     make.justifyContent.equalTo(FBJustify.spaceBetween)
                     make.alignContent.equalTo(FBAlign.center)
                     make.alignItems.equalTo(FBAlign.flexStart)
-                    make.margin.equalTo(UIEdgeInsetsMake(0, 10, 0, 10))
+                    make.margin.equalTo(UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10))
                     make.size.equalTo(CGSize(width: self.view.bounds.size.width-20, height: YGGet_undefined()))
                 }
             case 2:
@@ -215,7 +215,7 @@ class ViewController: UIViewController {
                     make.justifyContent.equalTo(FBJustify.flexStart)
                     make.alignContent.equalTo(FBAlign.center)
                     make.alignItems.equalTo(FBAlign.center)
-                    make.margin.equalTo(UIEdgeInsetsMake(0, 10, 0, 10))
+                    make.margin.equalTo(UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10))
                     make.size.equalTo(CGSize(width: self.view.bounds.size.width-20, height: YGGet_undefined()))
                 }
             case 3:
@@ -226,7 +226,7 @@ class ViewController: UIViewController {
                     make.justifyContent.equalTo(FBJustify.flexStart)
                     make.alignContent.equalTo(FBAlign.flexStart)
                     make.alignItems.equalTo(FBAlign.flexStart)
-                    make.margin.equalTo(UIEdgeInsetsMake(0, 10, 0, 10))
+                    make.margin.equalTo(UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10))
                     make.size.equalTo(CGSize(width: self.view.bounds.size.width-20, height: YGGet_undefined()))
                 }
             default: break

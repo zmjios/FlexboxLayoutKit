@@ -21,7 +21,7 @@ class FeedCell: UITableViewCell {
         // Initialization code
     }
     
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         
         titleLabel = UILabel()
         titleLabel.numberOfLines = 0
@@ -70,7 +70,7 @@ class FeedCell: UITableViewCell {
         
         titleLabel.text = model.title
         contentLabel.text = model.content
-        contentImageView.image = (model.imageName?.characters.count)! > 0 ? UIImage.init(named: model.imageName!):nil
+        contentImageView.image = UIImage.init(named: model.imageName!)
         usernameLabel.text = model.username
         timeLabel.text = model.time
         
@@ -83,20 +83,20 @@ class FeedCell: UITableViewCell {
         self.contentView.makeFlexbox{make in
             
             make.flexDirection.equalTo(FBFlexDirection.column)
-            make.margin.equalTo(UIEdgeInsetsMake(0, 0, 0, 0))
+            make.margin.equalTo(UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0))
             make.alignItems.equalTo(FBAlign.flexStart)
         }
         
         titleLabel.makeFlexbox{make in
-            make.margin.equalTo(UIEdgeInsetsMake(10, 10, 0, 0)).wrapContent()
+            make.margin.equalTo(UIEdgeInsets(top: 10, left: 10, bottom: 0, right: 0)).wrapContent()
         }
         
         contentLabel.makeFlexbox{make in
-            make.margin.equalTo(UIEdgeInsetsMake(10, 10, 0, 0)).wrapContent()
+            make.margin.equalTo(UIEdgeInsets(top: 10, left: 10, bottom: 0, right: 0)).wrapContent()
         }
         
         contentImageView.makeFlexbox{make in
-            make.margin.equalTo(UIEdgeInsetsMake(10, 10, 0, 0)).wrapContent()
+            make.margin.equalTo(UIEdgeInsets(top: 10, left: 10, bottom: 0, right: 0)).wrapContent()
         }
         
         usernameLabel.makeFlexbox{make in
@@ -109,7 +109,7 @@ class FeedCell: UITableViewCell {
         
         let div = FBLayoutDiv.layoutDiv(direction: FBFlexDirection.row, justify: FBJustify.spaceBetween, alignItems: FBAlign.flexStart, children: [usernameLabel,timeLabel])
         div.makeFlexbox{make in
-            make.margin.equalTo(UIEdgeInsetsMake(10, 10, 0, 10))
+            make.margin.equalTo(UIEdgeInsets(top: 10, left: 10, bottom: 0, right: 10))
         }
         
         self.contentView.fb_children = [titleLabel,contentLabel,contentImageView,div]
